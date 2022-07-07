@@ -39,9 +39,7 @@ create table agent(
     contact number,
     client_id number,
     seller_id number,
-    PRIMARY KEY(agent_id),
-    FOREIGN KEY(client_id) REFERENCES client ON DELETE CASCADE,
-    FOREIGN KEY(seller_id) REFERENCES seller ON DELETE CASCADE
+    PRIMARY KEY(agent_id)
 );
 
 create table appointment(
