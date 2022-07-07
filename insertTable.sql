@@ -29,31 +29,49 @@ insert into property(property_id, price, status, description, seller_id) values(
 insert into property(property_id, price, status, description, seller_id) values(3, 10000, 'unsold', 'Business', 2);
 insert into property(property_id, price, status, description, seller_id) values(5, 25000, 'sold', 'Special', 1);
 insert into property(property_id, price, status, description, seller_id) values(4, 35000, 'unsold', 'General',7);
-insert into property(property_id, price, status, description, seller_id) values(6, 10000, 'sold', 'Business', 8);
+insert into property(property_id, price, status, description, seller_id) values(8, 10000, 'sold', 'Business', 8);
 insert into property(property_id, price, status, description, seller_id) values(7, 13000, 'sold', 'Special', 4);
 insert into property(property_id, price, status, description, seller_id) values(9, 22000, 'unsold', 'General',9);
 insert into property(property_id, price, status, description, seller_id) values(10, 18000, 'unsold', 'Business', 10);
 
 --insert to agent
 
-insert into agent(agent_id, name, contact, client_id, seller_id) values(1, 'Mahadi Ankon',01554223344, 1, 2);
-insert into agent(agent_id, name, contact, client_id, seller_id) values(2, 'Taslima Joty',01638812717, 2, 3);
-insert into agent(agent_id, name, contact, client_id, seller_id) values(3, 'Faiyaz Sadi',01632887717, 1, 3);
-insert into agent(agent_id, name, contact, client_id, seller_id) values(5, 'Argho Deb',01712525897, 2, 7);
-insert into agent(agent_id, name, contact, client_id, seller_id) values(4, 'Mehdy Hasan',01912886617, 4, 9);
-insert into agent(agent_id, name, contact, client_id, seller_id) values(10, 'Sabbir Ahmed',01731212548, 8, 2);
-insert into agent(agent_id, name, contact, client_id, seller_id) values(9, 'Rishad Ul Bayesh',01711472514, 8, 9);
-insert into agent(agent_id, name, contact, client_id, seller_id) values(7, 'Nur Tamim',01521436258, 4, 7);
-insert into agent(agent_id, name, contact, client_id, seller_id) values(6, 'Shoriful Islam',01502584697, 1, 5);
+insert into agent(agent_id, name, contact) values(1, 'Mahadi Ankon',01554223344);
+insert into agent(agent_id, name, contact) values(2, 'Taslima Joty',01638812717);
+insert into agent(agent_id, name, contact) values(3, 'Faiyaz Sadi',01632887717);
+insert into agent(agent_id, name, contact) values(5, 'Argho Deb',01712525897);
+insert into agent(agent_id, name, contact) values(4, 'Mehdy Hasan',01912886617);
+insert into agent(agent_id, name, contact) values(10, 'Sabbir Ahmed',01731212548);
+insert into agent(agent_id, name, contact) values(9, 'Rishad Ul Bayesh',01711472514);
+insert into agent(agent_id, name, contact) values(7, 'Nur Tamim',01521436258);
+insert into agent(agent_id, name, contact) values(8, 'Shoriful Islam',01502584697);
 
 --insert to appointment
 
-insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(1, '12/6/2022', 1, 2, 3);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(1, '12/6/2022', 1, 2, 2);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(2, '13/6/2022', 2, 3, 1);
-insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(3, '14/6/2022', 3, 1, 2);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(3, '14/6/2022', 7, 7, 8);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(5, '16/6/2022', 8, 5, 1);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(6, '19/6/2022', 7, 3, 1);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(4, '23/6/2022', 8, 5, 8);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(10, '23/6/2022', 4, 7, 3);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(11, '24/6/2022', 2, 3, 5);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(7, '30/6/2022', 10, 9, 7);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(8, '4/7/2022', 1, 8, 1);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(9, '28/6/2022', 10, 1, 2);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(15, '2/7/2022', 9, 5, 8);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(14, '3/7/2022', 10, 5, 5);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(13, '6/6/2022', 2, 3, 5);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(12, '7/6/2022', 4, 9, 2);
 
 --insert to selling_info
 
-insert into selling_info(selling_info_id, sdate, client_id, seller_id, property_id) values(1, '21/6/2022', 3, 2, 1);
-insert into selling_info(selling_info_id, sdate, client_id, seller_id, property_id) values(2, '22/6/2022', 2, 1, 3);
-insert into selling_info(selling_info_id, sdate, client_id, seller_id, property_id) values(3, '23/6/2022', 1, 3, 2);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(1, '12/6/2022', 2, 1, 1);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(3, '14/6/2022', 7, 8, 8);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(5, '16/6/2022', 8, 3,2);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(6, '19/6/2022', 7, 2, 3);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(4, '23/6/2022', 8, 7, 4);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(11, '24/6/2022', 2, 3, 2);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(7, '30/6/2022', 10, 4, 7);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(9, '28/6/2022', 10, 1, 1);
+insert into selling_info(selling_info_id, sdate, client_id, seller_id,property_id) values(15, '2/7/2022', 9, 10, 10);
