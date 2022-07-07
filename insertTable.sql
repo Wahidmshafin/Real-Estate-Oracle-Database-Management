@@ -54,15 +54,15 @@ insert into appointment(appointment_id, appointment_date, client_id, seller_id, 
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(5, '16/6/2022', 8, 5, 1);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(6, '19/6/2022', 7, 3, 1);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(4, '23/6/2022', 8, 5, 8);
-insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(10, '23/6/2022', 4, 7, 3);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(10, '23/6/2022', 8, 7, 3);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(11, '24/6/2022', 2, 3, 5);
-insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(7, '30/6/2022', 10, 9, 7);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(7, '30/6/2022', 10, 9, 2);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(8, '4/7/2022', 1, 8, 1);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(9, '28/6/2022', 10, 1, 2);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(15, '2/7/2022', 9, 5, 8);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(14, '3/7/2022', 10, 5, 5);
 insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(13, '6/6/2022', 2, 3, 5);
-insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(12, '7/6/2022', 4, 9, 2);
+insert into appointment(appointment_id, appointment_date, client_id, seller_id, agent_id) values(12, '7/6/2022', 2, 9, 2);
 
 --insert to selling_info
 
