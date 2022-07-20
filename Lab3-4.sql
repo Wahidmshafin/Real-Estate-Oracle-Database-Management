@@ -52,4 +52,4 @@ group by status;
 -- Having Clause
 select count(agent_id), client_id from appointment
 group by client_id
-having client_id=1;
+having client_id=2;

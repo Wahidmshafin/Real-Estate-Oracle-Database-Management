@@ -219,6 +219,41 @@ end;
 /
 
 
+--Loop
+
+set SERVEROUTPUT on
+
+declare
+oldPrice property.price%type;
+newPrice property.price%type;
+id property.property_id%type;
+sellerName client.name%type;
+
+begin
+id:=1;
+loop
+select p.price, s.name into oldPrice, sellerName 
+from property p, seller s
+where property_id=id and p.property_id=s.seller_id;
+
+if oldPrice<1000 then
+newPrice:=oldPrice;
+elsif oldPrice>=1000 and oldPrice<1500 then
+newPrice:=oldPrice+ oldPrice*0.1;
+elsif oldPrice>=1500 and oldPrice<2000 then
+newPrice:=oldPrice+oldPrice*.2;
+else
+newPrice:=oldPrice+oldPrice*.5;
+end if;
+
+dbms_output.put_line('Seller ' || sellerName || ' Asking Price: ' || newPrice);
+id:=id+1;
+exit when id>5;
+end loop;
+end;
+/
+
+
 -- For Loop
 
 
@@ -283,6 +318,25 @@ end if;
 dbms_output.put_line('Seller ' || sellerName || ' Asking Price: ' || newPrice);
 id:=id+1;
 end loop;
+end;
+/
+
+
+--Cursor
+
+set SERVEROUTPUT on;
+declare
+CURSOR pr_cur is select property_id, price from property order by price;
+properties pr_cur%ROWTYPE;
+
+begin
+open pr_cur;
+loop
+fetch pr_cur into properties;
+exit when pr_cur%ROWCOUNT>4;
+dbms_output.put_line('ID: ' || properties.property_id || 'Price:' || properties.price );
+end loop;
+close pr_cur;
 end;
 /
 
@@ -517,7 +571,7 @@ group by status;
 -- Having Clause
 select count(agent_id), client_id from appointment
 group by client_id
-having client_id=1;
+having client_id=2;
 
 
 
@@ -600,7 +654,7 @@ from selling_info s cross join seller se;
 
 -- Left Outer Join
 select s.sdate, se.name, s.client_id, s.property_id
-from selling_info s left outer join seller se
+from seller se left outer join  selling_info s 
 using(seller_id);
 
 
@@ -614,4 +668,3 @@ using(seller_id);
 select s.sdate, se.name, s.client_id, s.property_id
 from selling_info s full outer join seller se
 using(seller_id);
-s

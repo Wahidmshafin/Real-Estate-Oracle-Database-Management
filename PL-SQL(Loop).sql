@@ -66,6 +66,39 @@ dbms_output.put_line('ID: ' || id || ' Price: ' || newPrice);
 end;
 /
 
+--Loop
+
+set SERVEROUTPUT on
+
+declare
+oldPrice property.price%type;
+newPrice property.price%type;
+id property.property_id%type;
+sellerName client.name%type;
+
+begin
+id:=1;
+loop
+select p.price, s.name into oldPrice, sellerName 
+from property p, seller s
+where property_id=id and p.property_id=s.seller_id;
+
+if oldPrice<1000 then
+newPrice:=oldPrice;
+elsif oldPrice>=1000 and oldPrice<1500 then
+newPrice:=oldPrice+ oldPrice*0.1;
+elsif oldPrice>=1500 and oldPrice<2000 then
+newPrice:=oldPrice+oldPrice*.2;
+else
+newPrice:=oldPrice+oldPrice*.5;
+end if;
+
+dbms_output.put_line('Seller ' || sellerName || ' Asking Price: ' || newPrice);
+id:=id+1;
+exit when id>5;
+end loop;
+end;
+/
 
 -- For Loop
 
@@ -134,4 +167,21 @@ end loop;
 end;
 /
 
+--Cursor
+
+set SERVEROUTPUT on;
+declare
+CURSOR pr_cur is select property_id, price from property order by price;
+properties pr_cur%ROWTYPE;
+
+begin
+open pr_cur;
+loop
+fetch pr_cur into properties;
+exit when pr_cur%ROWCOUNT>4;
+dbms_output.put_line('ID: ' || properties.property_id || '  Price:' || properties.price );
+end loop;
+close pr_cur;
+end;
+/
 
