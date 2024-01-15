@@ -53,3 +53,4 @@ begin
 dbms_output.put_line('Average Price: ' || avg_price);
 end;
 /
+
